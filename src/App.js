@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useRef} from 'react';
 import './App.css';
 
 
@@ -8,6 +8,8 @@ function App() {
   const [write, setWrite] = useState();
   const [query, setQuery] = useState();
   const [ingredient, setIngredient] = useState([]);
+  const about = useRef();
+  const gallery = useRef();
   useEffect(() => {
     const fetchRecipe = async() => {
       try{
@@ -22,15 +24,19 @@ function App() {
     fetchRecipe();
   },[query])
     if (!data){
-      return <h2>Can't find recipe</h2>;
+      return <h2></h2>;
     }
 
+  const scrollToSection = (ref) => {
+    ref.current.scrollIntoView({ behavior: "smooth"});
+  }
+    
   return (
     <div className='whole'>
       <div className='backgroundimg'>
       <div className='holder-top'>
-        <div className='about'>About</div>
-        <div className='gallery'>Gallery</div>
+        <div onClick={() => scrollToSection(about)} className='about'>About</div>
+        <div onClick={() => scrollToSection(gallery)} className='gallery'>Gallery</div>
       </div>
       <div className='holder-titleandsubtitle'>
       <div className='title'>Delicious Recipes at a Glance</div>
@@ -44,6 +50,9 @@ function App() {
           }
         }} className='input' placeholder='search' />
       </div>
+      <div onClick={() => {
+         setQuery(write);
+      }} className='holder-arrow'><img className='arrow' src='arrow.png' /></div>
       </div>
 
        {data.meals ? (
@@ -77,9 +86,14 @@ function App() {
           })}
         </div>
       ) : (
-        <div>No Research</div>
+        <div></div>
       )}
-      <div className='deco'>s</div>
+    
+    <div className='deco'>“My mission is to make cooking simple and fun for everyone.”
+      <div className='sihyeon'>- Sihyeon -</div>
+    </div>
+    <div className='whole-middle'>  
+    <div ref={about} className='title-about'>About</div>
     <div className='section-about1'>
      <div className='content-about1-1'> 
       <div className='img-content-about1-1'></div>
@@ -92,7 +106,6 @@ function App() {
       <li className='content-about1-3'>3. Enjoy the recipe — it's that easy!</li>
      </ul>
       </div>
-      
      </div>
      <div className='gap'></div>
      <div className='section-about2'>
@@ -104,12 +117,33 @@ function App() {
      <div className='gap'></div>
     </div>
     <div className='section-gallery'>
-      <div className='title-gallery'>Gallery</div>
-      <div className='imges-gallery'>
-
+      <div ref={gallery} className='title-gallery'>Gallery</div>
+      <div className='gap'></div>
+      <div className='images-gallery'>
+      <div className='images-section1'>
+        <img src='1.jpg' />
+        <img src='2.jpg' />
+        <img src='3.jpg' />
+        <img src='4.jpg' />
+        <img src='5.jpg' />
+        <img src='6.jpg' />
+        <img src='7.jpg' />
+        <img className='img-8' src='8.jpg' />
+        <img src='9.jpg' />
+        <img src='10.jpg' />
+        <img src='11.jpg' />
+        <img src='12.jpg' />
+        <img src='13.jpg' />
+      </div>
+      <div className='images-section2'></div>
+      <div className='images-section3'></div>
       </div>
     </div>
     </div>
+    <div className='bottom'>
+     <div>&copy; 2025 Sihyeon. All rights reserved.</div>
+    </div>
+  </div>
   );
 }
 

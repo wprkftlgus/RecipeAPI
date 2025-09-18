@@ -1,12 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Comic+Relief:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Rouge+Script&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
 .whole {
   
 }
 .backgroundimg {
   width: 100vw;
-  height: 65vh;
+  height: 100vh;
   background-size: cover;
   background-image: url('../public/recipe.jpg');
   background-repeat: no-repeat;
@@ -20,16 +21,18 @@
   font-size: 25px;
   color: white;
   font-family: "Comic Relief", system-ui;
+  cursor: pointer;
 }
 .gallery {
   font-size: 25px;
   color: white;
   font-family: "Comic Relief", system-ui;
+  cursor: pointer;
 }
 .holder-titleandsubtitle {
   text-align: center;
-  padding-top: 60px;
-  padding-bottom: 60px;
+  padding-top: 80px;
+  padding-bottom: 70px;
 }
 .title {
   font-size: 80px;
@@ -45,41 +48,84 @@
   text-align: center;
 }
 .input {
+  width: 500px;
   border-radius: 30px;
   outline: none;
   font-size: 30px;
   padding: 20px;
 }
+.holder-arrow {
+  padding-top: 100px;
+  text-align: center;
+}
+.arrow {
+  height: 100px;
+  cursor: pointer;
+  filter: invert(1) ;
+  transition: filter 0.15s;
+  animation: floating 3s infinite;
+}
+.arrow:hover {
+  filter: invert(0.6) brightness(1.4) hue-rotate(90deg);
+  
+}
 .right-holder-content-about {
   font-family: "Cabin", sans-serif;
 }
 .title-about1 {
-  font-size: 45px;
-  
+  font-size: 35px;
+  opacity: 0;
+  animation: FadeIn 2s forwards;
 }
 .ul-content-about {
   list-style: none;
 }
+.section-about1 {
+  margin-top: 100px;
+}
+.content-about1-1{
+  font-size: 3px;
+}
+.li-content-about1-2{
+  font-size: 3px;
+}
+.li-content-about1-3{
+  
+}
+.whole-middle {
+  
+}
 .deco {
-  background-color: rgb(243, 205, 156);
-  height: 15vh;
+  font-family: "Oswald", sans-serif;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  font-size: 60px;
+  text-align: center;
+  background-color: rgb(233, 226, 217);
+}
+.sihyeon {
+  padding-top: 20px;
+}
+.title-about {
+  font-family: "Rouge Script";
+  font-size: 120px;
+  text-align: center;
+  margin-top: 150px;
 }
 .content-about1-1 {
-  margin-left: 200px;
-  margin-right: 200px;
+  margin: 0 auto;
+  max-width: 1500px;
   font-size: 30px;
   display: flex;
-  text-align: center;
   align-items: center;
-  gap: 20px;
+  gap: 150px;
 }
 .img-content-about1-1 {
   background-image: url(../public/about1-1.jpg);
-  height: 450px;
-  width: 500px;
+  height: 350px;
+  width: 400px;
   background-repeat: no-repeat;
   background-size: cover;
-  
 }
 .content-about1-2 {
   font-size: 30px;
@@ -88,12 +134,12 @@
   font-size: 30px;
 }
 .section-about2 {
-  margin-left: 200px;
-  margin-right: 200px;
+  margin: 0 auto;
+  max-width: 1500px;
   display: flex;
   align-items: center;
   font-family: "Cabin", sans-serif;
-  gap: 20px;
+  gap: 150px;
 }
 .title-about2 {
  font-size: 45px;
@@ -107,12 +153,60 @@
 }
 .img-content-about2 {
   background-image: url('../public/comfort.jpg');
-  height: 500px;
-  width: 800px;
+  height: 400px;
+  width: 700px;
   background-size: cover;
+}
+.section-gallery {
+  background-color: rgb(228, 225, 214);
+  padding-bottom: 150px;
 }
 .title-gallery {
   font-family: "Rouge Script";
-  font-size: 100px;
+  font-size: 120px;
   text-align: center;
+  padding-top: 100px;
+}
+.images-gallery {
+  margin: 0 auto;
+  max-width: 1200px;
+}
+.images-section1 {
+  display: flex;
+  flex-wrap: wrap; 
+  gap: 30px;
+  
+}
+.images-section1 img {
+  height: 500px;
+  width: 30%;
+  border-radius: 60px;
+}
+.img-8 {
+  max-height: 300px;
+}
+.bottom {
+  background-color: rgb(65, 38, 3);
+  color: white;
+}
+@keyframes floating {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes FadeIn {
+  from  {
+    opacity: 0;
+    transform: translatey(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
