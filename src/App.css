@@ -1,38 +1,118 @@
-.App {
+@import url('https://fonts.googleapis.com/css2?family=Comic+Relief:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rouge+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&display=swap');
+.whole {
+  
+}
+.backgroundimg {
+  width: 100vw;
+  height: 65vh;
+  background-size: cover;
+  background-image: url('../public/recipe.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.holder-top {
+  display: flex;
+  gap: 50px;
+}
+.about {
+  font-size: 25px;
+  color: white;
+  font-family: "Comic Relief", system-ui;
+}
+.gallery {
+  font-size: 25px;
+  color: white;
+  font-family: "Comic Relief", system-ui;
+}
+.holder-titleandsubtitle {
+  text-align: center;
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+.title {
+  font-size: 80px;
+  color: white;
+  font-family: "Rouge Script", cursive;
+}
+.subtitle {
+  font-size: 50px;
+  color: white;
+  font-family: "Rouge Script", cursive;
+}
+.holder-input {
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.input {
+  border-radius: 30px;
+  outline: none;
+  font-size: 30px;
+  padding: 20px;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.right-holder-content-about {
+  font-family: "Cabin", sans-serif;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.title-about1 {
+  font-size: 45px;
+  
+}
+.ul-content-about {
+  list-style: none;
+}
+.deco {
+  background-color: rgb(243, 205, 156);
+  height: 15vh;
+}
+.content-about1-1 {
+  margin-left: 200px;
+  margin-right: 200px;
+  font-size: 30px;
   display: flex;
-  flex-direction: column;
+  text-align: center;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: 20px;
 }
-
-.App-link {
-  color: #61dafb;
+.img-content-about1-1 {
+  background-image: url(../public/about1-1.jpg);
+  height: 450px;
+  width: 500px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.content-about1-2 {
+  font-size: 30px;
+}
+.content-about1-3 {
+  font-size: 30px;
+}
+.section-about2 {
+  margin-left: 200px;
+  margin-right: 200px;
+  display: flex;
+  align-items: center;
+  font-family: "Cabin", sans-serif;
+  gap: 20px;
+}
+.title-about2 {
+ font-size: 45px;
+}
+.content-about2 {
+  font-size: 30px;
+  padding-top: 30px;
+}
+.gap {
+  margin-bottom: 250px;
+}
+.img-content-about2 {
+  background-image: url('../public/comfort.jpg');
+  height: 500px;
+  width: 800px;
+  background-size: cover;
+}
+.title-gallery {
+  font-family: "Rouge Script";
+  font-size: 100px;
+  text-align: center;
 }
