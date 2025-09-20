@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Alan+Sans:wght@300..900&display=swap');
+
+.whole {
+    background-color: rgb(100, 73, 40);
+}
+.holder-map {
+    max-width: 1600px;
+    margin: 0 auto;
+    margin-top: 50px;
+    padding-bottom: 50px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap-reverse;
+    gap: 20px;
+    background-color: rgb(124, 91, 51);
+    border-radius: 50px;
+}
+.holder-imgName {
+    text-align: center;
+}
+.img-meals {
+    height: 300px;
+    border-radius: 20px;
+    margin: 25px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.img-meals:hover {
+    transform: scale(1.03);
+}
+.name-meals {
+    text-align: center;
+    font-weight: 600;
+    font-size: 26px;
+    font-family: "Alan Sans", sans-serif;
+    color: white;
+    margin: 5px;
+}   

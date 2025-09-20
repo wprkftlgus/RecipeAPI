@@ -1,15 +1,17 @@
 import React, {useState, useEffect, useRef} from 'react';
-import './App.css';
+import './Home.css';
+import { Routes, Route, useNavigate} from "react-router-dom"
+import Search from './Search';
 
-
-function App() {
-
+function Home() {
   const [data , setData] = useState(null);
   const [write, setWrite] = useState();
   const [query, setQuery] = useState();
   const [ingredient, setIngredient] = useState([]);
   const about = useRef();
   const gallery = useRef();
+  const navigate = useNavigate();
+
   useEffect(() => {
     const fetchRecipe = async() => {
       try{
@@ -32,7 +34,7 @@ function App() {
   }
     
   return (
-    <div className='whole'>
+    <div className='whole-home'>
       <div className='backgroundimg'>
       <div className='holder-top'>
         <div onClick={() => scrollToSection(about)} className='about'>About</div>
@@ -46,7 +48,8 @@ function App() {
         <input value={write} onChange={(e) => {setWrite(e.target.value)}} 
         onKeyDown={(e) => {
           if (e.key === 'Enter'){
-            setQuery(write);
+            navigate(`/search?query=${write}`);
+            
           }
         }} className='input' placeholder='search' />
       </div>
@@ -144,7 +147,39 @@ function App() {
      <div>&copy; 2025 Sihyeon. All rights reserved.</div>
     </div>
   </div>
+  
   );
 }
 
+function SearchBar() {
+  const [write, setWrite] = useState();
+  const navigate = useNavigate();
+
+  return(
+    <div className='holder-input'>
+        <input value={write} onChange={(e) => {setWrite(e.target.value)}} 
+        onKeyDown={(e) => {
+          if (e.key === 'Enter'){
+            navigate(`/search?query=${write}`);
+            
+          }
+        }} className='input' placeholder='search' />
+    </div>
+  );
+}
+
+
+
+function App() {
+  return(
+    <Routes>
+    <Route path="/" element={<Home />} />
+    <Route path='/search' element={<Search />}></Route>
+    </Routes>
+  )
+} 
+
 export default App;
+export { SearchBar };
+
+
