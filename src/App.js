@@ -5,7 +5,7 @@ import Search from './Search';
 
 function Home() {
   const [data , setData] = useState(null);
-  const [write, setWrite] = useState();
+  const [write, setWrite] = useState('');
   const [query, setQuery] = useState();
   const [ingredient, setIngredient] = useState([]);
   const about = useRef();
@@ -48,14 +48,22 @@ function Home() {
         <input value={write} onChange={(e) => {setWrite(e.target.value)}} 
         onKeyDown={(e) => {
           if (e.key === 'Enter'){
+            if(e.target.value == ''){
+            alert("Please enter the food you want make")
+            return ;
+          }
             navigate(`/search?query=${write}`);
             
           }
         }} className='input' placeholder='search' />
       </div>
-      <div onClick={() => {
-         setQuery(write);
-      }} className='holder-arrow'><img className='arrow' src='arrow.png' /></div>
+      <div className='holder-arrow'><img onClick={() => {
+        if(write === ''){
+            alert("Please enter the food you want make")
+            return ;
+          }
+         navigate(`/search?query=${write}`);
+      }} className='arrow' src='arrow.png' /></div>
       </div>
 
        {data.meals ? (
@@ -98,7 +106,7 @@ function Home() {
     <div className='whole-middle'>  
     <div ref={about} className='title-about'>About</div>
     <div className='section-about1'>
-     <div className='content-about1-1'> 
+     <div className='content-about1'> 
       <div className='img-content-about1-1'></div>
       <div className='right-holder-content-about'>
       <div className='title-about1'>No need to worry about ingredients or how to cook!
@@ -124,19 +132,19 @@ function Home() {
       <div className='gap'></div>
       <div className='images-gallery'>
       <div className='images-section1'>
-        <img src='1.jpg' />
-        <img src='2.jpg' />
-        <img src='3.jpg' />
-        <img src='4.jpg' />
-        <img src='5.jpg' />
-        <img src='6.jpg' />
-        <img src='7.jpg' />
+        <img className='img-same' src='1.jpg' />
+        <img className='img-same' src='2.jpg' />
+        <img className='img-same' src='3.jpg' />
+        <img className='img-same' src='4.jpg' />
+        <img className='img-same' src='5.jpg' />
+        <img className='img-same' src='6.jpg' />
+        <img className='img-same' src='7.jpg' />
         <img className='img-8' src='8.jpg' />
-        <img src='9.jpg' />
-        <img src='10.jpg' />
-        <img src='11.jpg' />
-        <img src='12.jpg' />
-        <img src='13.jpg' />
+        <img className='img-same' src='9.jpg' />
+        <img className='img-same' src='10.jpg' />
+        <img className='img-same' src='11.jpg' />
+        <img className='img-same' src='12.jpg' />
+        <img className='img-same' src='13.jpg' />
       </div>
       <div className='images-section2'></div>
       <div className='images-section3'></div>
