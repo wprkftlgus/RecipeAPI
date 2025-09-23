@@ -2,37 +2,258 @@
 
 .whole {
     background-color: rgb(100, 73, 40);
+    
+    padding-top: 50px;
+    font-family: "Alan Sans", sans-serif;
+}
+.home {
+    background-image: url('../public/home.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+    margin-left: 50px;
+    transition: 0.1s;
+    
+}
+.home:hover {
+    transform: scale(1.1);
+}
+.titleAndHand {
+    padding-left: 13%;
+}
+.title1-search {
+    font-size: 40px;
+    color: yellow;
+}
+.hand {
+    background-image: url('../public/hand.png');
+    height: 100px;
+    width: 100px;
+    background-size: cover;
+    animation: upDown 2s infinite;
 }
 .holder-map {
     max-width: 1600px;
     margin: 0 auto;
-    margin-top: 50px;
-    padding-bottom: 50px;
-    margin-bottom: 20px;
+    margin-bottom: 60px;
+    padding: 50px;
+    padding-bottom: 40px;
     display: flex;
-    flex-wrap: wrap-reverse;
-    gap: 20px;
+    flex-wrap: wrap;
+    gap: 57px;
     background-color: rgb(124, 91, 51);
     border-radius: 50px;
+    min-height: 650px;
+}
+.bugAndLoading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 280px;
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 50px;
+    padding-bottom: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 57px;
+    background-color: rgb(124, 91, 51);
+    border-radius: 50px;
+    min-height: 650px;
+}
+.bug {
+    margin-top: 100px;
+    background-image: url('../public/icon.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 140px;
+    height: 140px;
+    animation: bugSpin 1.2s infinite;
+}
+.loading {
+    font-size: 50px;
 }
 .holder-imgName {
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(141, 109, 69);
+    border-radius: 50px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.holder-imgName:hover {
+    transform: scale(1.03);
 }
 .img-meals {
     height: 300px;
     border-radius: 20px;
     margin: 25px;
     cursor: pointer;
-    transition: 0.2s;
 }
-.img-meals:hover {
-    transform: scale(1.03);
-}
+
 .name-meals {
+    width: 300px;
     text-align: center;
     font-weight: 600;
-    font-size: 26px;
+    font-size: 30px;
     font-family: "Alan Sans", sans-serif;
     color: white;
     margin: 5px;
 }   
+.no {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 280px;
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 50px;
+    padding-bottom: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 57px;
+    background-color: rgb(124, 91, 51);
+    border-radius: 50px;
+    min-height: 650px;
+    font-size: 80px;
+}
+@media (max-width: 1670px) {
+    .holder-map {
+        max-width: 1180px;
+    }
+}
+@media (max-width: 1263px) {
+    .holder-map {
+        max-width: 760px;
+    }
+}
+@media (max-width: 856px) {
+    .home {
+        width: 60px;
+        height: 60px;
+    }
+    .title1-search {
+        font-size: 20px;
+    }
+    .hand {
+        width: 50px;
+        height: 50px;
+    }
+    .holder-map {
+        max-width: 560px;
+        padding: 30px;
+    }
+    .img-meals {
+        max-width: 200px;
+        max-height: 200px;
+    }
+    .name-meals {
+        width: 200px;
+    }
+}
+@media (max-width: 616px) {
+    .input {
+        width: 300px;
+    }
+    .holder-map {
+        max-width: 480px;
+    }
+    .img-meals {
+        max-width: 150px;
+        max-height: 150px;
+    }
+}
+@media (max-width: 536px) {
+    .holder-map {
+        max-width: 420px;
+    }
+    .img-meals {
+        max-width: 130px;
+        max-height: 130px;
+    }
+    .name-meals {
+        width: 150px;
+    }
+}
+@media (max-width: 476px) {
+    .holder-map {
+        max-width: 350px;
+        padding: 20px;
+        gap: 26px;
+    }
+    .img-meals {
+        max-width: 130px;
+        max-height: 130px;
+        margin: 15px;
+    }
+    .name-meals {
+        width: 100px;
+        font-size: 20px;
+    }
+}
+@media (max-width: 385px) {
+    .home {
+        width: 40px;
+        height: 40px;
+    }
+    .input {
+        height: 5px;
+        width: 200px;
+    }
+    .holder-imgName {
+        border-radius: 30px;
+    }
+    .holder-map {
+        max-width: 260px;
+        padding: 20px;
+        gap: 10px;
+    }
+    .img-meals {
+        max-width: 90px;
+        max-height: 90px;
+        margin: 15px;
+    }
+    .name-meals {
+        width: 60px;
+        font-size: 15px;
+    }
+}
+@keyframes upDown {
+    0% {
+        transform: translateY(5px);
+    }
+    50% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(5px);
+    }
+}
+@keyframes bugSpin {
+    0% {
+        transform: rotate(0deg) scale(1);
+    }
+    50% {
+        
+        transform: rotate(360deg) scale(1.4);
+    }
+    100% {
+        transform: rotate(720deg) scale(1);
+    }
+}
+@keyframes bugGrowing {
+    0% {
+        transform:scale(1);
+    }
+    50% {
+        
+        transform:scale(1.2);
+    }
+    100% {
+        transform:scale(1);
+    }
+}
