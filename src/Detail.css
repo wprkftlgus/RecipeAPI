@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Alan+Sans:wght@300..900&display=swap');
+
+.whole-detail {
+    background-color: rgb(100, 73, 40);
+    padding-top: 100px;
+    font-family: "Alan Sans", sans-serif;
+    color: white;
+}
+.back-detail {
+    background-image: url('../public/back.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+    margin-left: 50px;
+    transition: 0.1s;
+}
+.back-detail:hover {
+    transform: scale(1.1);
+}
+.holder-img-detail {
+    text-align: center;
+}
+.img-detail {
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 40vw;
+    height: 70vh;
+    border-radius: 20px;
+}
+.name-detail {
+    font-size: 60px;
+    text-align: center;
+    margin-top: 40px;
+    border-bottom: 2px solid black;
+   max-width: 80%;
+}
+.title-instructions-detail {
+    font-size: 60px;
+    text-align: center;
+    margin-top: 200px;
+    margin-bottom: 50px;
+}
+.content-instructions-detail {
+    font-size: 22px;
+    width: 80%;
+    margin: 0 auto;
+}
+.title-video-detail {
+    font-size: 60px;
+    text-align: center;
+    margin-top: 200px;
+}
+.holder-iframe {
+    padding-top: 50px;
+    margin: 0 auto;
+}
+.video {
+    width: 70vw;
+    height: 70vh;
+    background-color: black;
+    border-radius: 30px;
+    display: block;
+    position: relative;
+    margin: 0 auto;
+}

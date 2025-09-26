@@ -2,6 +2,7 @@ import React, {useState, useEffect, useRef} from 'react';
 import './Home.css';
 import { Routes, Route, useNavigate} from "react-router-dom"
 import Search from './Search';
+import Detail from './Detail';
 
 function Home() {
   const [data , setData] = useState(null);
@@ -183,6 +184,7 @@ function App() {
     <Routes>
     <Route path="/" element={<Home />} />
     <Route path='/search' element={<Search />}></Route>
+    <Route path='/detail/:id' element={<Detail />}></Route>
     </Routes>
   )
 } 

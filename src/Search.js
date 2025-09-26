@@ -49,7 +49,9 @@ function Search() {
 
         }
         return(
-        <div>
+        <div key={meals.idMeal} onClick={() => {
+            navigate(`/detail/${meals.idMeal}`);
+        }}>
         <div className="holder-imgName" key={meals.idMeal}>
         <img className="img-meals" src={meals.strMealThumb} />
         <div className="name-meals">{meals.strMeal}</div>
