@@ -9,10 +9,12 @@ function Home() {
   const [write, setWrite] = useState('');
   const [query, setQuery] = useState();
   const [ingredient, setIngredient] = useState([]);
+  const [burger, setBurger] = useState(false);
+  const whole = useRef();
   const about = useRef();
   const gallery = useRef();
   const navigate = useNavigate();
-
+  //fetch api and get response
   useEffect(() => {
     const fetchRecipe = async() => {
       try{
@@ -29,19 +31,45 @@ function Home() {
     if (!data){
       return <h2></h2>;
     }
-
+  
   const scrollToSection = (ref) => {
     ref.current.scrollIntoView({ behavior: "smooth"});
   }
-    
+  
+  function FadeIn({ children, threshold = 0.2}){
+    const [visible, setVisible] = useState(false);
+    const ref = useRef();
+
+    useEffect(() => {
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting)
+          setVisible(true);}, { threshold }
+      );
+      if (ref.current){observer.observe(ref.current);}
+      return () => observer.disconnect();
+    },[threshold]);
+    return(
+      <div ref={ref} className={visible ? children.props.className:""}>{children}</div>
+    )
+  }
+
   return (
     <div className='whole-home'>
+      <div onClick={() => scrollToSection(whole)} className='up'></div>
+      <div className={`holder-burger ${burger ? "open" : ""}`}>
+        <div onClick={() => scrollToSection(about)} className='about-burger'>About</div>
+        <div onClick={() => scrollToSection(gallery)} className='gallery-burger'>Gallery</div>
+      </div>
       <div className='backgroundimg'>
-      <div className='holder-top'>
+      <div ref={whole} className='holder-top'>
         <div onClick={() => scrollToSection(about)} className='about'>About</div>
         <div onClick={() => scrollToSection(gallery)} className='gallery'>Gallery</div>
+        <div onClick={() => {
+          setBurger(e => !e);
+        }} className='burger-home'></div>
       </div>
-      <div className='holder-titleandsubtitle'>
+      <div  className='holder-titleandsubtitle'>
       <div className='title'>Delicious Recipes at a Glance</div>
       <div className='subtitle'>Search the recipe for your meal!</div>
       </div>
@@ -110,20 +138,22 @@ function Home() {
      <div className='content-about1'> 
       <div className='img-content-about1-1'></div>
       <div className='right-holder-content-about'>
+      <FadeIn>
       <div className='title-about1'>No need to worry about ingredients or how to cook!
-     </div>
+     </div></FadeIn>
      <ul className='ul-content-about'>
-      <li className='content-about1-1'>1. Search for the meal you want.</li>
-      <li className='content-about1-2'>2. Click on the picture.</li>
-      <li className='content-about1-3'>3. Enjoy the recipe — it's that easy!</li>
+     <FadeIn><li className='content-about1-1'>1. Search for the meal you want.</li></FadeIn>
+      <FadeIn><li className='content-about1-2'>2. Click on the picture.</li></FadeIn>
+      <FadeIn><li className='content-about1-3'>3. Enjoy the recipe — it's that easy!</li></FadeIn>
      </ul>
       </div>
      </div>
      <div className='gap'></div>
      <div className='section-about2'>
+     <FadeIn>
      <div className='title-about2'>User friendly
      <div className='content-about2'>We even put the youtube video for user comfort!</div>
-     </div>
+     </div></FadeIn>
      <div className='img-content-about2'></div>
      </div>
      <div className='gap'></div>

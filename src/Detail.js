@@ -4,17 +4,17 @@ import '../src/Detail.css'
 
 function Detail(){
     const [meal, setMeal] = useState([]);
+    const [ingredients, setIngredients] = useState([]);
     const navigate = useNavigate();
     const {id} = useParams();
-    console.log(id);
-    
+
     useEffect(() => {
         try{
             const fetchDetail = async () => {
             const res = await fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`);
             const json = await res.json();
             if(json.meals){
-             setMeal(json.meals[0]);
+             await setMeal(json.meals[0]);
             }
         }
         fetchDetail();
@@ -24,14 +24,25 @@ function Detail(){
         }
     },[id])
     const youtubeID = meal.strYoutube ? meal.strYoutube.split("v=")[1] : null;
-
+    useEffect(() => {
+        const ingArr = [];
+        for(let i = 1 ; i <=20 ; i ++){
+        const ing = meal[`strIngredient${i}`];
+        if(ing && ing.trim() !== ""){
+            ingArr.push(ing);
+        }
+        setIngredients(ingArr);
+    }
+    console.log(ingredients);
+    },[meal]);
     return(
         <div className="whole-detail">
         <div className="back-detail" onClick={() => {
-            navigate('/search')
+            navigate(-1);
         }}></div>
         <div className="holder-img-detail"><img className="img-detail" src={meal.strMealThumb} /></div>
         <div className="name-detail">{meal.strMeal}</div>
+        <div>{ingredients.map((ing, idx) => (<div key={idx}>{ing}</div>))}</div>
         <div className="title-instructions-detail">Instructions</div>
         <div className="content-instructions-detail">{meal.strInstructions}</div>
         <div className="title-video-detail">Youtube Video</div>
