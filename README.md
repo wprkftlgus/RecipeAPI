@@ -1,5 +1,8 @@
 # 🍳 Recipe Finder
-### Overview
+# 🌐 Live Website
+https://recipeapibysihyeon.netlify.app/
+
+## Overview
 
 **Recipe Finder** is a web application that allows users to search for various recipes and view detailed information.
 When a user searches for a keyword, for example cake, the keyword is sent as a parameter in an API request to fetch all related recipes.
