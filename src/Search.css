@@ -86,6 +86,7 @@
     transition: 0.2s;
 }
 .holder-imgName:hover {
+     box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.15);
     transform: scale(1.03);
 }
 .img-meals {

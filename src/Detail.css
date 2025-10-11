@@ -2,7 +2,7 @@
 
 .whole-detail {
     background-color: rgb(100, 73, 40);
-    padding-top: 100px;
+    padding-top: 50px;
     font-family: "Alan Sans", sans-serif;
     color: white;
 }
@@ -34,6 +34,21 @@
     text-align: center;
     margin-top: 40px;
 }
+.title-Ingredients-detail {
+    font-size: 60px;
+    margin-top: 200px;
+    text-align: center;
+    margin-bottom: 50px;
+}
+.Ingredients-detail {
+    padding: 30px;
+    border-radius: 20px;
+    background-color: rgb(121, 92, 59);
+    margin: 0 auto;
+    width: 20vw;
+    font-size: 30px;
+    text-align: center;
+}
 .title-instructions-detail {
     font-size: 60px;
     text-align: center;
@@ -41,6 +56,9 @@
     margin-bottom: 50px;
 }
 .content-instructions-detail {
+    padding: 30px;
+    border-radius: 20px;
+    background-color: rgb(121, 92, 59);
     font-size: 22px;
     width: 80%;
     margin: 0 auto;
@@ -53,11 +71,14 @@
 .holder-iframe {
     padding-top: 50px;
     margin: 0 auto;
+    margin-bottom: 100px;
 }
 .video {
+    padding: 50px;
+    border-radius: 20px;
+    background-color: rgb(121, 92, 59);
     width: 70vw;
     height: 70vh;
-    background-color: black;
     border-radius: 30px;
     display: block;
     position: relative;

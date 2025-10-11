@@ -33,7 +33,7 @@ function Detail(){
         }
         setIngredients(ingArr);
     }
-    console.log(ingredients);
+    
     },[meal]);
     return(
         <div className="whole-detail">
@@ -41,11 +41,12 @@ function Detail(){
             navigate(-1);
         }}></div>
         <div className="holder-img-detail"><img className="img-detail" src={meal.strMealThumb} /></div>
-        <div className="name-detail">{meal.strMeal}</div>
-        <div>{ingredients.map((ing, idx) => (<div key={idx}>{ing}</div>))}</div>
-        <div className="title-instructions-detail">Instructions</div>
+        <div className="name-detail">- {meal.strMeal} -</div>
+        <div className="title-Ingredients-detail">- Ingredients -</div>
+        <div className="Ingredients-detail">{ingredients.map((ing, idx) => (<div key={idx}>{ing}</div>))}</div>
+        <div className="title-instructions-detail">- Instructions -</div>
         <div className="content-instructions-detail">{meal.strInstructions}</div>
-        <div className="title-video-detail">Youtube Video</div>
+        <div className="title-video-detail">- Youtube Video -</div>
         {youtubeID && <div className="holder-iframe"><iframe className="video" frameBorder={0} src={`https://www.youtube.com/embed/${youtubeID}`}></iframe></div>}
         <div className='bottom'>
         <div>&copy; 2025 Sihyeon. All rights reserved.</div>
