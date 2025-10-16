@@ -25,14 +25,13 @@
 .img-detail {
     background-repeat: no-repeat;
     background-size: cover;
-    width: 40vw;
-    height: 70vh;
+    width: 40%;
+    height: 70%;
     border-radius: 20px;
 }
 .name-detail {
     font-size: 60px;
     text-align: center;
-    margin-top: 40px;
 }
 .title-Ingredients-detail {
     font-size: 60px;
@@ -83,4 +82,102 @@
     display: block;
     position: relative;
     margin: 0 auto;
+}
+@media (max-width: 1000px) {
+    .back-detail {
+        width: 70px;
+        height: 70px;
+    }
+    .name-detail {
+        font-size: 40px;
+    }
+    .title-Ingredients-detail {
+        font-size: 40px;
+    }
+    .Ingredients-detail {
+        font-size: 18px;
+    }
+    .title-instructions-detail {
+        font-size: 40px;
+    }
+    .content-instructions-detail {
+        font-size: 15px;
+    }
+    .title-video-detail {
+        font-size: 40px;
+    }
+    .video {
+        width: 50vw;
+        height: 50vh;
+        padding: 30px;
+    }
+}
+@media (max-width: 600px) {
+    .back-detail {
+        width: 50px;
+        height: 50px;
+    }
+    .holder-img-detail {
+        margin-top: 20px;
+    }
+    .name-detail {
+        font-size: 20px;
+    }
+    .title-Ingredients-detail {
+        font-size: 20px;
+    }
+    .Ingredients-detail {
+        font-size: 13px;
+        padding: 20px;
+    }
+    .title-instructions-detail {
+        font-size: 20px;
+    }
+    .content-instructions-detail {
+        font-size: 11px;
+        padding: 20px;
+    }
+    .title-video-detail {
+        font-size: 20px;
+    }
+    .video {
+        width: 50vw;
+        height: 30vh;
+        padding: 20px;
+    }
+}
+@media (max-width: 400px) {
+    .back-detail {
+        width: 35px;
+        height: 35px;
+    }
+    .holder-img-detail {
+        margin-top: 20px;
+    }
+    .name-detail {
+        font-size: 15px;
+    }
+    .title-Ingredients-detail {
+        font-size: 15px;
+    }
+    .Ingredients-detail {
+        font-size: 10px;
+    }
+    .title-instructions-detail {
+        font-size: 15px;
+    }
+    .content-instructions-detail {
+        font-size: 9px;
+    }
+    .title-video-detail {
+        font-size: 15px;
+    }
+    .video {
+        width: 60vw;
+        height: 20vh;
+        padding: 15px;
+    }
+    .bottom {
+        font-size: 10px;
+    }
 }
