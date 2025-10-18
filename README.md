@@ -1,4 +1,9 @@
 # 🍳 Recipe Finder
+<img width="1419" height="859" alt="1" src="https://github.com/user-attachments/assets/7c266d38-fae3-4182-9650-da7425543769" />
+<img width="689" height="855" alt="2" src="https://github.com/user-attachments/assets/6b9998bb-b75a-4f97-bcd2-01c15ff8e445" />
+<img width="492" height="860" alt="3" src="https://github.com/user-attachments/assets/226e7a99-4b1d-48d2-b8d6-72c66f7df98f" />
+
+
 # 🌐 Live Website
 https://recipeapibysihyeon.netlify.app/
 
